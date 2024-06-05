@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+                function parallax_height() {
+        var scroll_top = $(this).scrollTop();
+        var sample_section_top = $(".sample-section").offset().top;
+        var header_height = $(".sample-header-section").outerHeight();
+        $(".sample-section").css({ "margin-top": header_height });
+        $(".sample-header").css({ height: header_height - scroll_top });
+        }
+        parallax_height();
+        $(window).scroll(function() {
+        parallax_height();
+        });
+        $(window).resize(function() {
+        parallax_height();
+        });
+            </script>
+            <style>
+
+                    /*  */
+                    .seven h1 {
+        text-align: center;
+            font-size:30px; font-weight:300; color:#222; letter-spacing:1px;
+            text-transform: uppercase;
+
+            display: grid;
+            grid-template-columns: 1fr max-content 1fr;
+            grid-template-rows: 27px 0;
+            grid-gap: 20px;
+            align-items: center;
+        }
+
+        .seven h1:after,.seven h1:before {
+            content: " ";
+            display: block;
+            border-bottom: 1px solid #c50000;
+            border-top: 1px solid #c50000;
+            height: 5px;
+        background-color:#f8f8f8;
+        }
+
+                    /*  */
+
+
+                    /* button */
+
+                    p{
+                        text-align: justify;
+                        text-justify: inter-word;
+                    }
+                    button {
+        border: none;
+        display: block;
+        position: relative;
+        padding: 0.7em 2.4em;
+        font-size: 18px;
+        background: transparent;
+        cursor: pointer;
+        /* user-select: none; */
+        overflow: hidden;
+        color: royalblue;
+        z-index: 1;
+        font-family: inherit;
+        font-weight: 500;
+        }
+
+        button span {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        z-index: -1;
+        border: 4px solid royalblue;
+        }
+
+        button span::before {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 8%;
+        height: 500%;
+        background: var(--lightgray);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(-60deg);
+        transition: all 0.3s;
+        }
+
+        button:hover span::before {
+        transform: translate(-50%, -50%) rotate(-90deg);
+        width: 100%;
+        background: royalblue;
+        }
+
+        button:hover {
+        color: white;
+        }
+
+        button:active span::before {
+        background: #2751cd;
+        }
+
+            /* button */
+
+
+        * {
+            box-sizing: border-box;
+        }
+        /* body {
+           
+        } */
+        /* Float four columns side by side */
+        .column {
+            float: left;
+            width: 25%;
+            padding: 0 10px;
+        }
+
+        
+  img {
+    width: 150px;
+    height: 150px;
+    align-items: center;
+
+  }
+        /* Remove extra left and right margins due to padding in columns */
+        .row {
+            margin: 0 -5px;
+        }
+
+        .row:hover{
+            transition: 0.4;
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.9);
+        }
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        /* Style the counter cards */
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* Adds the "card" effect */
+            padding: 16px;
+            text-align: center;
+            background-color: lightgray;
+        }
+        .container{
+            border-style: inset;
+        }
+
+            /*  */
+
+            .webmadewell {
+            background-color: white;
+            }
+            body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            }
+            .sample-header {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 120%;
+            height: 100%;
+            background-image: url("https://quotefancy.com/media/wallpaper/3840x2160/2029087-John-Dewey-Quote-Education-is-not-preparation-for-life-education.jpg");
+            /*background-image: url("http://webmadewell.com/wp-content/uploads/2018/01/img-bg-sample-parallax-header.jpg");*/
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            }
+            .sample-header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: MidnightBlue;
+            opacity: 0.3;
+            }
+            .sample-header-section {
+            position: relative;
+            padding: 15% 0 10%;
+            max-width: 640px;
+            margin-left: auto;
+            margin-right: auto;
+            color: white;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+            font-family: "Montserrat", sans-serif;
+            }
+            h1 {
+            font-weight: 500;
+            }
+            h2 {
+            font-weight: 400;
+            }
+            .sample-section-wrap {
+            position: relative;
+            background-color: white;
+            }
+            .sample-section {
+            position: relative;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 2px;
+            }
+
+            /*footer  */
+            body{
+            margin:0;
+            overflow-x:hidden;
+            }
+
+            .footer{
+            background:#000;
+            padding:30px 0px;
+            font-family: 'Play', sans-serif;
+            text-align:center;
+            }
+
+            .footer .row{
+            width:100%;
+            margin:1% 0%;
+            padding:0.6% 0%;
+            color:gray;
+            font-size:0.8em;
+            }
+
+            .footer .row a{
+            text-decoration:none;
+            color:gray;
+            transition:0.5s;
+            }
+
+            .footer .row a:hover{
+            color:#fff;
+            }
+
+            .footer .row ul{
+            width:100%;
+            }
+
+            .footer .row ul li{
+            display:inline-block;
+            margin:0px 30px;
+            }
+
+            .footer .row a i{
+            font-size:2em;
+            margin:0% 1%;
+            }
+
+            @media (max-width:720px){
+            .footer{
+            text-align:left;
+            padding:5%;
+            }
+            .footer .row ul li{
+            display:block;
+            margin:10px 0px;
+            text-align:left;
+            }
+            .footer .row a i{
+            margin:0% 3%;
+            }
+            }
+            /* footer */
+
+
+
+
+        /* Responsive columns - one column layout (vertical) on small screens */
+        @media screen and (max-width: 600px) {
+            .column {
+                width: 100%;
+                display: block;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="row">
+        <div class="column">
+            <div class="card">
+               <img src="ice sword.jpg" alt="img">
+               <h2>Sword Image </h2>
+               <a href="index.html">quiz</a>
+            </div>
+        </div>
+        <div class="column">
+            <div class="card">
+                <img src="ice sword.jpg" alt="img">
+                <h2>Sword Image </h2>
+                <a href="index.html">quiz</a>
+            </div>
+        </div>
+        <div class="column">
+            <div class="card">
+                <img src="ice sword.jpg" alt="img">
+                <h2>Sword Image </h2>
+                <a href="index.html">quiz</a>
+            </div>
+        </div>
+        <div class="column">
+            <div class="card">
+                <img src="ice sword.jpg" alt="img">
+                <h2>Sword Image </h2>
+                <a href="index.html">quiz</a>
+            </div>
+      </div>
+    </div>
+    
+
+    
+    <div class="row">
+        <div class="column">
+            <div class="card">
+               <img src="ice sword.jpg" alt="img">
+               <h2>Sword Image </h2>
+               <a href="index.html">quiz</a>
+            </div>
+        </div>
+        <div class="column">
+            <div class="card">
+                <img src="ice sword.jpg" alt="img">
+                <h2>Sword Image </h2>
+                <a href="index.html">quiz</a>
+            </div>
+        </div>
+        <div class="column">
+            <div class="card">
+                <img src="ice sword.jpg" alt="img">
+                <h2>Sword Image </h2>
+                <a href="index.html">quiz</a>
+            </div>
+        </div>
+        <div class="column">
+            <div class="card">
+                <img src="ice sword.jpg" alt="img">
+                <h2>Sword Image </h2>
+                <a href="index.html">quiz</a>
+            </div>
+      </div>
+    </div>
+    
+
+
+    <!-- cards of topic -->
+    <div class="sample-header">
+        <div class="sample-header-section">
+          <h1></h1>
+          <h2> </h2>
+        </div>
+      </div>
+      <div class="sample-section-wrap">
+        <div class="sample-section">
+
+            <div class="seven">
+                <h1>Programming Languages</h1>
+              </div>
+
+                    <p><i>Programming languages serve as the foundational building blocks of the digital world,
+                         each with its unique syntax,strengths, and applications. Learning a programming 
+                         language isn't just about mastering code; it's about unlocking the gateway to
+                          creativity, problem-solving, and innovation. Whether you're drawn to the sleek 
+                          efficiency of C or the dynamic versatility of Python, each language offers a pathway
+                           to express your ideas and bring them to life in the digital realm. From crafting
+                            elegant algorithms to developing cutting-edge software solutions, the journey of 
+                            learning a programming language is a voyage of discovery, where every line of 
+                            code becomes a stroke on the canvas of possibility. So, embark on this adventure 
+                            with us, and let's navigate the rich landscape of programming languages together,
+                             transforming your aspirations into tangible achievements in the ever-evolving
+                              world of technology.</i></p>
+
+
+
+          
+            <div class="row">
+                <div class="column">
+                    <div class="card">
+                       <img src="C++ IMAGE.png" alt="img">
+                       <h2>C++ TUTORIAL </h2>
+                       <!-- <a href="index.html">quiz</a> -->
+                       <button onclick="window.location.href='class.html';" >Class<span></span></button><br>
+                       <button onclick="window.location.href='index.html';" >Quizz<span></span></button>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="card">
+                        <img src="Java.png" alt="img">
+                        <h2>JAVA TUTORIAL </h2>
+                        <button onclick="window.location.href='java.html';" >Class<span></span></button><br>
+                       <button onclick="window.location.href='index.html';" >Quizz<span></span></button>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="card">
+                        <img src="C IMAGE.png" alt="img">
+                        <h2> C <BR>TUTORIAL </h2>
+                            <button onclick="window.location.href='c.html';" >Class<span></span></button><br>
+                            <button onclick="window.location.href='index.html';" >Quizz<span></span></button>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="card">
+                        <img src="PYTHON.png" alt="img">
+                        <h2>PYTHON TUTORIAL </h2>
+                        <button onclick="window.location.href='index.html';" >Class<span></span></button><br>
+                       <button onclick="window.location.href='index.html';" >Quizz<span></span></button>
+                    </div>
+              </div>
+            </div>
+            
+        <br>
+
+        <div class="seven">
+            <h1>Scripting Languages</h1>
+          </div>
+            
+        <p>
+            Scripting languages are the nimble artisans of the programming world, offering a blend of 
+            simplicity, flexibility, and rapid development capabilities. Unlike their compiled counterparts,
+             scripting languages like , JavaScript, and HTML prioritize ease of use and quick iteration, 
+             making them ideal tools for automating tasks, building web applications, and prototyping ideas with 
+             minimal overhead. Their dynamic nature empowers developers to write code that reads like plain
+              English, fostering a creative environment where experimentation and innovation flourish. 
+              Whether you're a seasoned developer or a curious beginner, diving into the world of scripting
+               languages opens doors to a realm of endless possibilities, where even the most ambitious
+                projects can be realized with elegance and efficiency. So, join us as we explore the artistry
+                 of scripting languages, where every line of code becomes a brushstroke in the masterpiece
+                  of your digital creations.
+        </p>
+
+
+            <div class="row">
+                <div class="column">
+                    <div class="card">
+                       <img src="HTML.jpg" alt="img">
+                       <h2>HTML TUTORIAL </h2>
+                       <button onclick="window.location.href='index.html';" >Class<span></span></button><br>
+                       <button onclick="window.location.href='index.html';" >Quizz<span></span></button>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="card">
+                        <img src="CSS3.jpg" alt="img">
+                        <h2>CSS TUTORIAL </h2>
+                        <button onclick="window.location.href='index.html';" >Class<span></span></button><br>
+                       <button onclick="window.location.href='index.html';" >Quizz<span></span></button>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="card">
+                        <img src="JAVASCRIPT.png" alt="img">
+                        <h2>JAVASCRIPT TUTORIAL </h2>
+                        <button onclick="window.location.href='index.html';" >Class<span></span></button><br>
+                       <button onclick="window.location.href='index.html';" >Quizz<span></span></button>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="card">
+                        <img src="SQL.jpg" alt="img">
+                        <h2>SQL TUTORIAL </h2>
+                        <button onclick="window.location.href='index.html';" >Class<span></span></button><br>
+                       <button onclick="window.location.href='index.html';" >Quizz<span></span></button>
+                    </div>
+              </div>
+            </div>
+            <br>
+
+          <!-- footer -->
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+       
+          <link rel="preconnect" href="https://fonts.gstatic.com">
+          <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Play&display=swap" rel="stylesheet"> 
+          </head>
+          <body>
+          <footer>
+          <div class="footer">
+          <div class="row">
+          <a href="#"><i class="fa fa-facebook"></i></a>
+          <a href="#"><i class="fa fa-instagram"></i></a>
+          <a href="#"><i class="fa fa-youtube"></i></a>
+          
+          </div>
+          
+          <div class="row">
+          <ul>
+          <li><a href="#">Contact us</a></li>
+          <li><a href="#">Our Services</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms & Conditions</a></li>
+          <li><a href="#">Career</a></li>
+          </ul>
+          </div>
+          
+          <div class="row">
+            
+          </div>
+          </div>
+          </footer>
+
+          <!-- footer -->
+        </div>
+      </div>
+
+     
+</body>
+</html>
